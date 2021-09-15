@@ -50,3 +50,6 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+### Plugin para git de IV ###
+git-iv

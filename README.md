@@ -8,4 +8,4 @@ Se plantea a partir de esta situación crear una API para la gestión de negocio
 
 ## Issues :adhesive_bandage:
 
-Puedes acceder a información detallada de las Issues del repositorio desde [aquí](https://github.com/Antobio17/IV/docs/ISSUES.md).
+Puedes acceder a información detallada de las Issues del repositorio desde [aquí](docs/ISSUES.md).

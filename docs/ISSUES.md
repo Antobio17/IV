@@ -4,7 +4,7 @@ Las necesidades que la API deberá cubrir pueden verse en las [Issues](https://g
 
 ## Historias de usuario :ok_man:
 
-Las historias de usuario corresponderán a las necesidades de uso por parte de los diferentes usuarios de la API. Las HU tendrán asignada la label [user-stories](https://github.com/Antobio17/IV/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
+Las historias de usuario corresponderán a las necesidades de uso por parte de los usuarios de la API. Las HU tendrán asignada la label [user-stories](https://github.com/Antobio17/IV/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
 ## Milestones o Hitos :1st_place_medal:
 

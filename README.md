@@ -10,6 +10,12 @@ Como consecuencia de la reserva de citas pueden aparecer problemas referenciados
 
 Además otro de los problemas que aparecen es la cantidad de articulos en el pedido mensual de productos para el negocio. Estos productos son utilizados para las citas y dependiendo del tipo de cita se agotarán antes o después.
 
+### Propuesta
+
+Se propone por tanto un sistema de gestión de cita previa "inteligente" que dependiendo del tipo de cita, el tipo de cliente (atendiento a la categorización del mismo), y el calendario del negocio, ofrecerá distintos horarios para la maximización del número de citas aumentando así las ganancias.
+
+También se propone un sistema de gestión de pedidos mensuales para ajustar el gasto a las necesidades de la barbería.
+
 ## Issues :adhesive_bandage:
 
 Puedes acceder a información detallada de las Issues del repositorio desde [aquí](docs/ISSUES.md).

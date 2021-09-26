@@ -8,8 +8,8 @@ Según el tipo de cita el cliente ocupará uno o varias lugares de trabajo difer
 
 ### Tipo de cliente :busts_in_silhouette:
 
-Al tener que realizar reservas se puede dar el caso que haya anulaciones inesperadas, sin tiempo de actuación para el trabajador por lo que se desaprovecharían horas de trabajo. Estudiando las acciones del cliente en la peluquería se podría minimizar este riesgo, por ejemplo, si un cliente ha anulado muchas citas en el pasado podría colocarse en una de las últimas horas y asi poder reaccionar con ams tiempo ante otra posible anulación.
+Al tener que realizar reservas se puede dar el caso que haya anulaciones inesperadas, sin tiempo de actuación para el trabajador por lo que se desaprovecharían horas de trabajo. Estudiando las acciones del cliente en la peluquería se podría minimizar este riesgo, por ejemplo, si un cliente ha anulado muchas citas en el pasado podría colocarse en una de las últimas horas y así poder reaccionar con más tiempo ante otra posible anulación.
 
 ---
 
-Combinando estos criterios se conseguiría una optimización de la agenda de la peluquería tratando asi de maximizar las ganancias de esta mediante el máximo número de citas atendidas.
+Combinando estos criterios se conseguiría una optimización de la agenda de la peluquería tratando así de maximizar las ganancias de esta mediante el máximo número de citas atendidas.

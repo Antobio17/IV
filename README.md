@@ -16,4 +16,4 @@ También se propone un sistema de gestión de pedidos mensuales para ajustar el 
 
 ## Issues :adhesive_bandage:
 
-Puedes acceder a información detallada de las Issues del repositorio desde [aquí](docs/ISSUES.md).
+Puedes acceder a información detallada de las Issues del repositorio desde [aquí](docs/issues.md).

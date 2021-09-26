@@ -12,9 +12,12 @@ Además otro de los problemas que aparecen es la cantidad de articulos en el ped
 
 ### Propuesta
 
-Se propone por tanto un sistema de gestión de cita previa "inteligente" que dependiendo del tipo de cita, el tipo de cliente (atendiento a la categorización del mismo), y el calendario del negocio, ofrecerá distintos horarios para la maximización del número de citas aumentando así las ganancias.
+Se propone por tanto un sistema de gestión de cita previa "inteligente" que dependiendo del tipo de cita, el tipo de cliente (atendiento a la categorización del mismo), y el calendario del negocio, ofrecerá distintos horarios para la maximizar los ingresos.
+Esta maximización de ingresos se conseguirá reduciendo las cancelaciones imprevistas (estudio de los clientes para categorización) o reduciendo los tramos horarios en los que un trabajador no tiene cliente al que atender.
 
 También se propone un sistema de gestión de pedidos mensuales para ajustar el gasto a las necesidades de la barbería.
+
+Mas información en las [historias de usuario](https://github.com/Antobio17/IV/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
 ## Issues :adhesive_bandage:
 

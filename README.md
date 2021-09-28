@@ -22,4 +22,4 @@ Puedes acceder a información detallada de las Issues del repositorio desde [aqu
 
 ## Tipos de usuario :busts_in_silhouette:
 
-Podrás acceder a la información de los tipos de usuario desde [aquí](docs/tipos_usuario.md).
+Puedes acceder a la información de los tipos de usuario desde [aquí](docs/tipos_usuario.md).

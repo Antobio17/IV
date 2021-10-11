@@ -23,3 +23,7 @@ Puedes acceder a información detallada de las Issues del repositorio desde [aqu
 ## Tipos de usuario :busts_in_silhouette:
 
 Puedes acceder a la información de los tipos de usuario desde [aquí](docs/tipos_usuario.md).
+
+## Gestores :gear:
+
+Puedes acceder a los gestores utilizados para esta aplicación desde [aquí](docs/gestores.md)

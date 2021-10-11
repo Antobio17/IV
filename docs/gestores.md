@@ -1,6 +1,6 @@
 # Gestores :gear:
 
-## Gestor de dependencias (Pip) :arrow_down:
+## Gestor de dependencias: _Pip_ :arrow_down:
 
 Se ha elegido **Pip** como gestor de dependencias por la simplicidad de uso. 
 
@@ -12,7 +12,7 @@ Para instalar las dependencias ejecutaremos:
 pip3 install -r requirements.txt
 ```
 
-# Gestor de tareas (Invoke) :bookmark_tabs:
+## Gestor de tareas: _Invoke_ :bookmark_tabs:
 
 Se ha elegido **Invoke** como gestor de tareas por varios motivos:
 - Amplia documentación de la herramienta para poder apoyarse en el uso de esta.

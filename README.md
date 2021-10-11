@@ -26,4 +26,4 @@ Puedes acceder a la información de los tipos de usuario desde [aquí](docs/tipo
 
 ## Gestores :gear:
 
-Puedes acceder a los gestores utilizados para esta aplicación desde [aquí](docs/gestores.md)
+Puedes acceder a los gestores utilizados para esta aplicación desde [aquí](docs/gestores.md).

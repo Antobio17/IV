@@ -24,6 +24,6 @@ Puedes acceder a información detallada de las Issues del repositorio desde [aqu
 
 Puedes acceder a la información de los tipos de usuario desde [aquí](docs/tipos_usuario.md).
 
-##Objetivo 2
+## Objetivo 2
 
 Realizado por Ángel Amadeo González Ruiz

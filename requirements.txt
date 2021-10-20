@@ -1,0 +1,2 @@
+# Libreria para el checkeo de sintaxis de programas.
+pyflakes=2.4.0

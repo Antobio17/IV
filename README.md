@@ -38,7 +38,7 @@ invoke installdeps
 
 ### Comprobación de sintaxis del proyecto
 
-Para comprobar la sintaxis de los distintos archivos del proyecto se han valorado varias opciones como _PyChecker_, _Pyflakes_ o _Pylint_. Finalmente se usará el checkeador _Pyflakes_. 
+Para comprobar la sintaxis de los distintos archivos del proyecto se han valorado y probado varias opciones como _Pyflakes_ o _Pylint_. Finalmente se usará el checkeador _Pyflakes_ ya que realiza las comprobaciones en un menor tiempo y además de indicar el fichero junto con la línea donde está el error, muestra explicitamente la línea de código marcando la posición del mismo. 
 
 La orden que se deberá ejecutar es la siguiente:
 

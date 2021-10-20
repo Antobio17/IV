@@ -27,3 +27,21 @@ Puedes acceder a la información de los tipos de usuario desde [aquí](docs/tipo
 ## Gestores :gear:
 
 Puedes acceder a los gestores utilizados para esta aplicación desde [aquí](docs/gestores.md).
+
+### Instalación de dependencias
+
+La orden que se deberá ejecutar es la siguiente:
+
+```shell
+invoke installdeps
+```
+
+### Comprobación de sintaxis del proyecto
+
+Para comprobar la sintaxis de los distintos archivos del proyecto se han valorado varias opciones como _PyChecker_, _Pyflakes_ o _Pylint_. Finalmente se usará el checkeador _Pyflakes_. 
+
+La orden que se deberá ejecutar es la siguiente:
+
+```shell
+invoke check
+```

@@ -194,4 +194,8 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/python
+=======
+# End of https://www.toptal.com/developers/gitignore/api/python
+>>>>>>> 4e16b107ac6165a04f12cd5038c12c51800f1413

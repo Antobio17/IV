@@ -12,7 +12,7 @@ Bastaría con crear un archivo **_requirements.txt_** en el que declararemos nue
 
 Para instalar las dependencias se podrá ejecutar:
 
-```python
+```shell
 pip3 install -r requirements.txt
 ```
 

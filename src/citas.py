@@ -1,4 +1,4 @@
-from datetime import datetime
+from cita import *
 
 class citas:
     """
@@ -14,17 +14,18 @@ class citas:
         Cadena de texto que almacena el turno en el que se 
         dará la cita, siendo posible tomar los valores:
         mañana o tarde
+    cita : cita
+        Valor objeto de citas
 
     Methods
     -------
-    muestra_cita()
-        Muestra la cita
-    introduce_cita()
-        Añade una cita
+    set_cita(fecha,turno,cita)
+
     """
 
-    def __init__(self,ident,fecha,turno):
-        self._ident=ident
-        self._fecha=fecha
-        self._turno=turno
+    def __init__(self):
+        self._citas = {}
+
+    def set_cita(self,ident,fecha,turno,cita): 
+        None
 

@@ -1,6 +1,6 @@
-from datetime import datetime
 
-class Cita:
+
+class cita:
     """
     Entidad que representa una cita 
 
@@ -16,14 +16,19 @@ class Cita:
 
     Methods
     -------
-    get_cita()
-        Muestra la cita
+    get_telefono()
+        Nos devuelve el atributo telefono
+    get_tipo_de_cita()
+        Nos devuelve el atributo tipo de cita
+    
     """
 
-
-    def __init__(self,telefono,tipo_de_cita):
+    def __init__(self,telefono,nombre_tipo_cita):
         """
-        Constructor de la entidad.
+        Constructor de la entidad que inicializaremos el numero
+        de telefono, así como el nombre del tipo de cita, pues
+        con este parametro se puede contruir el diccionario ya que
+        los demás valores son contantes en funcion del nombre
 
         Parameters
         ----------
@@ -31,12 +36,12 @@ class Cita:
         tipo_de_cita : dict
         
         """
-        self.telefono=telefono
-        self.tipo_de_cita=tipo_de_cita #Esta tiene que ser un diccionario
+        self._telefono=telefono
+        self._tipo_de_cita=nombre_tipo_cita
     
-    def get_cita(self):
+    def get_telefono(self):
         """
-        Obtiene una cita
+        Obtiene atributo telefono
 
         Parameters
         ----------
@@ -44,10 +49,25 @@ class Cita:
 
         Returns
         -------
-        self : Cita
-            Objeto de tipo cita
+        self : _telefono
+            número de telefono
         """
-        return self
+        return self._telefono
+
+    def get_tipo_de_cita(self):
+        """
+        obtiene el atributo tipo_de_cita
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        self : _tipo_de_cita
+            tipo de cita que se puede llegar a dar
+        """
+        return self._tipo_de_cita
 
     
         

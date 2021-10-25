@@ -33,11 +33,37 @@ class cita:
         Parameters
         ----------
         telefono : str
-        tipo_de_cita : dict
+        nombre_tipo_cita : str
         
         """
+        if type(telefono)!=str:
+            raise AttributeError("El telefono debe ser una cadena")
+
+        nombre = ["corte normal", "tinte", "peinados para boda"]
+        if (nombre_tipo_cita in nombre) == False:
+            raise AttributeError("El tipo de cita especificada no es correcta.")
+
         self._telefono=telefono
-        self._tipo_de_cita=nombre_tipo_cita
+
+        if nombre_tipo_cita == "corte normal":
+            self._tipo_de_cita = {
+                'nombre':'corte normal',
+                'tiempo1':20,
+                }
+        elif nombre_tipo_cita == "tinte":
+            self._tipo_de_cita = {
+                'nombre':'tinte',
+                'tiempo1':15,
+                'espera':30,
+                'tiempo2':10
+                }
+        elif nombre_tipo_cita == "peinados para boda":
+            self._tipo_de_cita = {
+                'nombre':'peinados para boda',
+                'tiempo1':10,
+                'espera':15,
+                'tiempo2':10
+                }
     
     def get_telefono(self):
         """
@@ -65,7 +91,7 @@ class cita:
         Returns
         -------
         self : _tipo_de_cita
-            tipo de cita que se puede llegar a dar
+            Tipo de cita que se puede llegar a dar
         """
         return self._tipo_de_cita
 

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass(frozen=True) 
 class cita:
     """
@@ -17,8 +18,6 @@ class cita:
 
     Methods
     -------
-    get_telefono()
-        Nos devuelve el atributo telefono
     get_tipo_de_cita()
         Nos devuelve el atributo tipo de cita
     
@@ -26,7 +25,7 @@ class cita:
 
     def __init__(self,telefono,nombre_tipo_cita):
         """
-        Constructor de la entidad que inicializaremos el numero
+        Constructor del objeto valor que inicializaremos el numero
         de telefono, así como el nombre del tipo de cita, pues
         con este parametro se puede contruir el diccionario ya que
         los demás valores son contantes en funcion del nombre
@@ -65,21 +64,6 @@ class cita:
                 'espera':15,
                 'tiempo2':10
                 }
-    
-    def get_telefono(self):
-        """
-        Obtiene atributo telefono
-
-        Parameters
-        ----------
-        None
-
-        Returns
-        -------
-        self : _telefono
-            número de telefono
-        """
-        return self._telefono
 
     def get_tipo_de_cita(self):
         """

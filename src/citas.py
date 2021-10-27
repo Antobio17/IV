@@ -29,7 +29,6 @@ class citas:
         """
         self._citas = {}
 
-    @classmethod
     @abstractmethod
     def aniadir_cita(self,fecha,turno,cita):
         """

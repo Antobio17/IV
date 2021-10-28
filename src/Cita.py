@@ -1,5 +1,10 @@
 from dataclasses import dataclass
+from enum import Enum
 
+class nombre_tipo_cita(Enum):
+    CORTE_NORMAL = 1
+    TINTE = 2
+    PEINADO_PARA_BODA = 3
 
 @dataclass(frozen=True) 
 class cita:
@@ -39,7 +44,12 @@ class cita:
         if type(telefono)!=str:
             raise AttributeError("El telefono debe ser una cadena")
 
-        nombre = ["corte normal", "tinte", "peinados para boda"]
+        nombre = [  nombre_tipo_cita.CORTE_NORMAL.value, 
+                    nombre_tipo_cita.TINTE.value, 
+                    nombre_tipo_cita.PEINADO_PARA_BODA.value
+                    ]
+
+
         if (nombre_tipo_cita in nombre) == False:
             raise AttributeError("El tipo de cita especificada no es correcta.")
 

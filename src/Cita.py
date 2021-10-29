@@ -42,13 +42,7 @@ class cita:
         
         """
         if type(telefono)!=str:
-            raise AttributeError("El telefono debe ser una cadena")
-
-        nombre = [  nombre_tipo_cita.CORTE_NORMAL.value, 
-                    nombre_tipo_cita.TINTE.value, 
-                    nombre_tipo_cita.PEINADO_PARA_BODA.value
-                    ]
-
+            raise AttributeError("El teléfono debe ser una cadena")
 
         if (nombre_tipo_cita in nombre) == False:
             raise AttributeError("El tipo de cita especificada no es correcta.")

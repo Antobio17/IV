@@ -13,7 +13,7 @@ class tipo_cita(Enum):
 @dataclass(frozen=True)
 class cita:
     """
-    Entidad que representa un objeto valor cita 
+    Objeto valor que representa una cita
 
     Attributes
     ----------

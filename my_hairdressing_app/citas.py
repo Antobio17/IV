@@ -3,7 +3,7 @@ from cita import *
 
 class citas:
     """
-    Entidad que representa una cita 
+    Entidad que representa un conjunto de cita 
 
     Attributes
     ----------

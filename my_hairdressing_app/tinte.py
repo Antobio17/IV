@@ -2,7 +2,7 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class Tinte:
     """
-    Entidad que representa una cita 
+    Entidad que representa un tipo de cita 
 
     Attributes
     ----------

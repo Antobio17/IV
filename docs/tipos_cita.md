@@ -12,4 +12,4 @@ Este tipo se compone de 3 fases. La primera donde el trabajador aplica el tinte 
 
 ## Peinados para boda :massage:	
 
-En esta cita el trabajador lavará el pelo al cliente (10 minutos) y este se colocará en un secador de casco donde esperará 15 minutos. Una vez transcurrido este tiempo será peinado donde se invertirán otros 10 minutos.
+En esta cita el trabajador lavará el pelo al cliente (10 minutos) y este se colocará en un secador de casco donde esperará 20 minutos. Una vez transcurrido este tiempo será peinado donde se invertirán otros 10 minutos.

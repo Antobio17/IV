@@ -1,7 +1,6 @@
 from abc import abstractmethod
 from cita import *
 
-@dataclass(frozen=True)
 class citas:
     """
     Entidad que representa un conjunto de cita 

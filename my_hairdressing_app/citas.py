@@ -37,8 +37,8 @@ class citas:
 
         Parameters
         ----------
-        fecha : datetime
-            Tipo datetime que representa la fecha de la cita
+        fecha : String
+            Tipo String que representa la fecha de la cita, sin horas
         turno : String
             Cadena de texto que almacena el turno en el que se 
             dará la cita, siendo posible tomar los valores:

@@ -4,7 +4,7 @@ from .corte_normal import CorteNormal
 from .tinte import Tinte
 from .peinados_para_boda import PeinadosParaBoda
 
-from .errores import error_cita
+from .errores import CitaNameNotExist, PhoneFormatError
 
 
 class tipo_cita(Enum):
@@ -48,10 +48,10 @@ class cita:
         
         """
         if type(telefono)!=str:
-            raise error_cita("El telefono debe ser una cadena")
+            raise PhoneFormatError()
 
         if (nombre_tipo_cita in tipo_cita.members):
-            raise error_cita("El tipo de cita especificada no es correcta.")
+            raise CitaNameNotExist()
             
 
         self._telefono=telefono

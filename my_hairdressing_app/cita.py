@@ -4,6 +4,8 @@ from .corte_normal import CorteNormal
 from .tinte import Tinte
 from .peinados_para_boda import PeinadosParaBoda
 
+from .errores import error_cita
+
 
 class tipo_cita(Enum):
     CORTE_NORMAL = 1
@@ -46,10 +48,10 @@ class cita:
         
         """
         if type(telefono)!=str:
-            raise AttributeError("El teléfono debe ser una cadena")
+            raise error_cita("El telefono debe ser una cadena")
 
         if (nombre_tipo_cita in tipo_cita.members):
-            raise AttributeError("El tipo de cita especificada no es correcta.")
+            raise error_cita("El tipo de cita especificada no es correcta.")
             
 
         self._telefono=telefono

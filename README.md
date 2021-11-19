@@ -45,3 +45,13 @@ La orden que se deberá ejecutar es la siguiente:
 ```shell
 invoke check
 ```
+
+### Uso de tests
+
+Puedes acceder a la información relativa a los _tests_ desde [aquí](docs/tests.md).
+
+La orden que se deberá ejecutar es la siguiente:
+
+```shell
+invoke test
+```

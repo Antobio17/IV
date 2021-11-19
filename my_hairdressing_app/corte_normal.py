@@ -1,7 +1,6 @@
-from dataclasses import dataclass
-from tipo_cita import *
-@dataclass(frozen=True)
-class CorteNormal:
+from .tipo_cita import tipo_cita
+
+class CorteNormal(tipo_cita):
     """
     Objeto valor que representa un tipo de cita 
 
@@ -29,4 +28,4 @@ class CorteNormal:
         _duracion = {
                 'tiempo1':20,
                 }
-        super(_nombre,_duracion)
+        super().__init__(_nombre,_duracion)

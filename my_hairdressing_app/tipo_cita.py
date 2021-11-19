@@ -1,5 +1,8 @@
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 
+
+@dataclass(frozen=True)
 class tipo_cita(ABC):
     """
     Clase padre abstracta que contiene lo básico que tiene un tipo de cita
@@ -30,3 +33,14 @@ class tipo_cita(ABC):
         """
         self._nombre=_nombre
         self._duracion=_duracion
+
+    def getDuration(self):
+        """
+        Método que devuelve la propiedad _duración del objeto valor.
+
+        Returns
+        -------
+        _duracion : str
+            Duración de la cita.
+        """
+        return self._duracion

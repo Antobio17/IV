@@ -1,6 +1,5 @@
-from dataclasses import dataclass
-from tipo_cita import *
-@dataclass(frozen=True)
+import tipo_cita
+
 class Tinte(tipo_cita):
     """
     Objeto valor que representa un tipo de cita 
@@ -31,9 +30,9 @@ class Tinte(tipo_cita):
                 'tiempo1':15,
                 'espera':30,
                 'tiempo2':10
-                }
+        }
 
-        super(_nombre,_duracion)
+        super().__init__(_nombre,_duracion)
 
         
 

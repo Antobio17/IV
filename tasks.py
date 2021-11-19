@@ -24,3 +24,13 @@ def check(c):
     print("Comprobando sintaxis...")
     run("pyflakes my_hairdressing_app")
     print("Todo correcto. La comprobación ha terminado con éxito!")
+
+@task
+def test(c):
+    """
+    Lanzará todos los tests definidos en el directorio tests
+    """
+
+    print("Lanzando tests...")
+    run("pytest tests/")
+    print("Tests superados con éxito!")

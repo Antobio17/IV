@@ -11,8 +11,8 @@ Por último añadir la posibilidad de ejecución con argumentos para lanzar los 
 Al igual que en el repositorio oficial de GitHub de [pytest](https://github.com/pytest-dev/pytest), hemos creado la carpeta _testing_ en la que almacenaremos los archivos fuentes para los testeos.
 
 Enlaces con información adicional:
-- (https://realpython.com/pytest-python-testing/)[https://realpython.com/pytest-python-testing/].
-- (https://docs.pytest.org/)[https://docs.pytest.org/].
+- https://realpython.com/pytest-python-testing
+- https://docs.pytest.org/
 
 ## Assertions
 

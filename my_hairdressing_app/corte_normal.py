@@ -1,8 +1,9 @@
 from dataclasses import dataclass
+from tipo_cita import *
 @dataclass(frozen=True)
 class CorteNormal:
     """
-    Entidad que representa un tipo de cita 
+    Objeto valor que representa un tipo de cita 
 
     Attributes
     ----------
@@ -21,12 +22,11 @@ class CorteNormal:
     """
     def __init__(self):
         """
-        Contructor sin parametro que le asigna
-        un nombre que viene a ser el nombre de 
-        la clase y un diccinario que almacena lo
-        que tarde por intervalos
+        Contructor que llama al contructor padre del que hereda
+        al cual le pasa un _nombre y una _duracion
         """
-        self._nombre='CORTE_NORMAL'
-        self._duracion = {
+        _nombre='CORTE_NORMAL'
+        _duracion = {
                 'tiempo1':20,
                 }
+        super(_nombre,_duracion)

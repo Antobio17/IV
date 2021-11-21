@@ -1,10 +1,9 @@
 # Uso de tests :test_tube:
 
 Para los archivos fuente del proyecto se van a implementar una serie de tests para compobar el correcto funcionamiendo de estos.
-En _Python_ existen varios framework y librerías para la construcción de tests, para este proyecto se van a tener en cuenta dos de ellas, **Pytests** y **Unittest**.
+En _Python_ existen varios frameworks para la implementación de tests. Vamos a tener en cuenta dos de ellas, **Pytests** y **Unittest**.
 
-Las dos herramientas son bastante similares pero para mi hay algo bastante significativo que las diferencia y es la **respuesta de la ejcución** al lanzar estos tests.
-En el caso de que ningún test de error, ambos nos dirán que se han ejecutado sin problemas mostrando el tiempo que han tardado, sin embargo, la diferencia aparece cuando un test falla. En _unittest_ únicamente nos dirá que ha habido un error, pero en _pytests_ además mostrará en que test se ha producido el error. Esto puede ser bastante util en el caso de tener una gran batería de test ya que nos permitirá identificar rapidamente donde tenemos el problema.
+La implementación de test es algo mas sencilla con _Pytests_ ya que se construyen con funciones directamente para testear el código deseado. Sin embargo en _Unittest_ se deben crear estructuras de clases. Esto puede ser una ventaja a la ora de organización de código para agrupar los diferentes test que podamos llegar a tener, pero con _Pytest_ podríamos organizarlos por archivos fuentes y ejecutar el que deseemos en cada momento.
 También destacar que según he podido [leer](https://www.pythonpool.com/python-unittest-vs-pytest/), _pytest_ es más rápido y eficiente.
 Por último añadir la posibilidad de ejecución con argumentos para lanzar los tests desde consola pudiendo indicar la información que queremos recibir de los tests lanzados, añadir el debugger de _Python_, etc.
 

@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 import tipo_cita
 
-=======
-from dataclasses import dataclass
-from tipo_cita import *
-@dataclass(frozen=True)
->>>>>>> a5568338795addb693f6fe53005ae5997481c246
 class Tinte(tipo_cita):
     """
     Objeto valor que representa un tipo de cita 
@@ -36,15 +30,9 @@ class Tinte(tipo_cita):
                 'tiempo1':15,
                 'espera':30,
                 'tiempo2':10
-<<<<<<< HEAD
         }
 
         super().__init__(_nombre,_duracion)
-=======
-                }
-
-        super(_nombre,_duracion)
->>>>>>> a5568338795addb693f6fe53005ae5997481c246
 
         
 

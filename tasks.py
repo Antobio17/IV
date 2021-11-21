@@ -32,5 +32,5 @@ def test(c):
     """
 
     print("Lanzando tests...")
-    run("pytest tests/")
+    run("pytest testing/")
     print("Tests superados con éxito!")

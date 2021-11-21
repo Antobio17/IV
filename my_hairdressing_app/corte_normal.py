@@ -17,7 +17,6 @@ class CorteNormal(tipo_cita):
     Methods
     -------
     None
-    
     """
     def __init__(self):
         """

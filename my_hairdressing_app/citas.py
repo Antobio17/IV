@@ -85,7 +85,6 @@ class citas:
             mañana o tarde
         cita : cita
             Valor objeto de citas que viene representado por un dict
-
         Returns
         -------
         None

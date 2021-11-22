@@ -55,3 +55,7 @@ La orden que se deberá ejecutar es la siguiente:
 ```shell
 invoke test
 ```
+
+## Docker :computer:
+
+Puedes acceder a la información de contenerización para esta aplicación desde [aquí](docs/docker.md).

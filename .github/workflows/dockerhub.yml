@@ -38,4 +38,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: latest
+          tags: bengotch/samplepython:latest

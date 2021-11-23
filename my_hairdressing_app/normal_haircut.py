@@ -15,6 +15,6 @@ class NormalHaircut(AppointmentType):
         super().__init__(
             'normal_haircut',
             {                
-                'first_working_step'  : 20,
+                'first_working_step' : 20,
             }
         )

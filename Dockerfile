@@ -4,6 +4,8 @@ LABEL version="0.1.2" maintainer="antoniojr997@gmail.com"
 RUN apk update \
     && apk upgrade \
     && apk add bash \
+    # Flag -S: creamos usuario de sistema.
+    # Flag -G: indicamos el nombre del grupo donde se añade el usuario.
     && addgroup -S pyAlpine  && adduser -S pyAlpine -G pyAlpine
 USER pyAlpine
 
@@ -17,7 +19,7 @@ COPY . /app/test/
 ENV PATH = "$PATH:/home/pyContainer/.local/bin"
 
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
-# Hacemos la instalación como usuario root ya que algunos paquetes como pyflakes lo necesitan.USER root
+# Hacemos la instalación como usuario root ya que algunos paquetes como pyflakes lo necesitan.
 USER root 
 RUN pip install -r /app/test/requirements.txt
 

@@ -38,4 +38,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: bengotch/samplepython:latest
+          tags: antobio17/iv:latest

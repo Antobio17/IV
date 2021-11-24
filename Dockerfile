@@ -13,7 +13,7 @@ USER pyAlpine
 WORKDIR /app/test    
 
 # Movemos el fichero de depencencias y el fuente del gestor de tareas al directorio de trabajo.
-COPY . /app/test/
+COPY requirements.txt tasks.py /app/test/
 
 # Añadimos a PATH el directorio para el log de Python.
 ENV PATH = "$PATH:/home/pyContainer/.local/bin"

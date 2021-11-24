@@ -56,7 +56,7 @@ sys	0m0,062s
 
 
 Como podemos observar el tiempo es muy similar, únicamente se diferencian en un segundo.
-Se va a proceder por tanto a usar la imagen base de **alpine** para _Python_ ya que, aunque por poco ha sido mas rápida y no hemos tenido ningún problema en la ejecución como se comentaba en el articulo comentado anteriormente.
+Se va a proceder por tanto a usar la imagen base de **alpine** para _Python_ ya que, aunque por poco, ha sido mas rápida y no hemos tenido ningún problema en la ejecución como se comentaba en el articulo comentado anteriormente.
 
 ## DockerHub :whale:
 

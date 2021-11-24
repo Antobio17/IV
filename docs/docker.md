@@ -60,4 +60,4 @@ Se va a proceder por tanto a usar la imagen base de **alpine** para _Python_ ya 
 
 ## DockerHub :whale:
 
-El contendor ha sido publicado en [este enlace](https://hub.docker.com/repository/docker/antobio17/my_hairdressing_app/) por medio de una _Github Action_. Para la configuración de esta se han seguido los pasos [_Github_](https://docs.github.com/es/actions/publishing-packages/publishing-docker-images). Lo que si vamos a modificar en esta Github Action es cuando se lanzará. Añadiremos las opciones de Pull Request a la rama main y push en cualquier rama del repositorio unicamente cuando se modifique el Dockerfile.
+El contendor ha sido publicado en [este enlace](https://hub.docker.com/repository/docker/antobio17/iv/) por medio de una _Github Action_. Para la configuración de esta se han seguido los pasos [_Github_](https://docs.github.com/es/actions/publishing-packages/publishing-docker-images). Lo que si vamos a modificar en esta Github Action es cuando se lanzará. Añadiremos las opciones de Pull Request a la rama main y push en cualquier rama del repositorio unicamente cuando se modifique el Dockerfile.

@@ -31,7 +31,7 @@ Successfully built 529533260c3e
 
 real	0m10,392s
 user	0m0,070s
-sys	    0m0,069s
+sys	0m0,069s
 ```
 
 ### python:3.8.0-slim
@@ -51,7 +51,7 @@ Successfully built 5bfec2d103cc
 
 real	0m11,869s
 user	0m0,088s
-sys	    0m0,062s
+sys	0m0,062s
 ```
 
 

@@ -4,16 +4,15 @@ Para el uso de los siguientes gestores se deberán tener previamente instalados 
 
 ## Gestor de dependencias: _Pip_ :arrow_down:
 
-[Instalación.](https://pip.pypa.io/en/stable/installation/)
+Según el [PEP 621](https://www.python.org/dev/peps/pep-0621/) debemos almacenar los metadatos del proyecto en un fichero llamado **pyproject.toml**. En el almacenaremos información referente al proyecto (nombre, descripción...), a los usuarios implicados (autores, mantenedores...), dependencias, entre otras cosas.
+En este proyecto se añadirá la impormación básica y las dependencias requeridas ya que, por el momento no necesitamos configuración adicional.
 
-Se ha elegido **Pip** como gestor de dependencias por la simplicidad de uso. 
+En el propio _PEP_ nos indican trés [herramientas](https://www.python.org/dev/peps/pep-0621/#dependencies-optional-dependencies) para realizar esa instalación: Flit, Poetry y Setuptools. Ya que solo necesitamos usarlo para instalar las dependencias del proyecto (ya que usaremos para acompañarlo un gestor de tareas) se va a optar por el uso de **Flit** ya que no se necesitan ficheros extra y usa el propio fichero vanila de _pyproject.toml_ con la sintaxis que se especifica en la documentación oficial de _Python_. Lo único que necesitamos es definir el **Wheel** en _[build-system]_.
 
-Bastaría con crear un archivo **_requirements.txt_** en el que declararemos nuestras dependencias de la forma: _dependencia==version_.
-
-Para instalar las dependencias se podrá ejecutar:
+Una vez instalado _Flit_ podemos pasar a instalar las dependencias que definamos ejecutando:
 
 ```shell
-pip3 install -r requirements.txt
+flit install
 ```
 
 ## Gestor de tareas: _Invoke_ :bookmark_tabs:

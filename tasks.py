@@ -9,7 +9,7 @@ def installdeps(c):
     print("Instalando las dependencias...")
     
     try:
-        run("pip3 install -r requirements.txt")
+        run("flit install")
         print("La instalación ha terminado con éxito!")
     except Exception:
         print("Ha ocurrido un error en la instalación.")

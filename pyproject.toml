@@ -1,5 +1,5 @@
 [project]
-name = "my_hairdressing_app"
+name = "iv"
 version = "2021.11"
 description = "Organizador de agendas para peluquerías"
 requires-python = "==3.8.0"

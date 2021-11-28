@@ -6,23 +6,21 @@ RUN apk update \
     && apk add bash \
     # Flag -S: creamos el grupo de sistema.
     # Flag -G: indicamos el nombre del grupo donde se añade el usuario.
-    && addgroup -S pyAlpine  && adduser -S pyAlpine -G pyAlpine
+    && addgroup -S pyAlpine  && adduser -S pyAlpine -G pyAlpine \
+    && pip install flit
 USER pyAlpine
 
 # Definición del directorio de trabajo.
 WORKDIR /app/test    
 
 # Movemos el fichero de depencencias y el fuente del gestor de tareas al directorio de trabajo.
-COPY pyproject.toml tasks.py /app/test/
+# COPY pyproject.toml tasks.py /app/test/
 
-# Añadimos a PATH el directorio para el log de Python.
-# ENV PATH = "$PATH:/home/pyContainer/.local/bin"
+# Añadimos a PATH el directorio para la instalación de dependencias con Flit
+ENV PATH = "$PATH:/home/pyAlpine/.local/bin"
 
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
-# Hacemos la instalación como usuario root ya que algunos paquetes como pyflakes lo necesitan.
-USER root 
-RUN pip install flit \
-    && flit install
+RUN flit install -s
 
 # Ejecución de los tests.
 USER pyAlpine 

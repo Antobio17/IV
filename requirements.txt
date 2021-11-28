@@ -1,4 +1,0 @@
-# Libreria para el checkeo de sintaxis de programas.
-pyflakes==2.4.0
-pytest==6.2.5
-invoke==1.6.0

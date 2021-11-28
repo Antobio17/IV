@@ -2,9 +2,7 @@
 name = "my_hairdressing_app"
 version = "2021.11"
 description = "Organizador de agendas para peluquerías"
-readme = "README.md"
-requires-python = "==3.8.10"
-license = {file = "LICENSE"}
+requires-python = "==3.8.0"
 authors = [
     {email = "antoniojr997@gmail.com"},
     {name = "Antonio"}

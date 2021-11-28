@@ -13,7 +13,7 @@ USER pyAlpine
 WORKDIR /app/test    
 
 # Movemos el fichero de depencencias y el fuente del gestor de tareas al directorio de trabajo.
-COPY . /app/test/
+COPY pyproject.toml tasks.py /app/test/
 
 # Añadimos a PATH el directorio para el log de Python.
 # ENV PATH = "$PATH:/home/pyContainer/.local/bin"
@@ -26,4 +26,3 @@ RUN pip install '.[project.optional-dependencies]'
 # Ejecución de los tests.
 USER pyAlpine 
 ENTRYPOINT ["invoke", "test"]
-

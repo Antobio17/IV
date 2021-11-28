@@ -26,3 +26,4 @@ RUN pip install '.[project.optional-dependencies]'
 # Ejecución de los tests.
 USER pyAlpine 
 ENTRYPOINT ["invoke", "test"]
+

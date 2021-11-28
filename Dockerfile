@@ -21,7 +21,8 @@ COPY pyproject.toml tasks.py /app/test/
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
 # Hacemos la instalación como usuario root ya que algunos paquetes como pyflakes lo necesitan.
 USER root 
-RUN flit install
+RUN pip install flit \
+    && flit install
 
 # Ejecución de los tests.
 USER pyAlpine 

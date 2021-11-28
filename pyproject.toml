@@ -23,7 +23,8 @@ tester = [
 checker = [
     "pyflakes == 2.4.0",
 ]
-tark_manager = [
+managers = [
+    "flit == 3.5.1",
     "invoke == 1.6.0",
 ]
 

@@ -14,7 +14,7 @@ USER pyAlpine
 WORKDIR /app/test    
 
 # Movemos el fichero de depencencias y el fuente del gestor de tareas al directorio de trabajo.
-# COPY pyproject.toml tasks.py /app/test/
+COPY pyproject.toml tasks.py /app/test/
 
 # Añadimos a PATH el directorio para la instalación de dependencias con Flit
 ENV PATH = "$PATH:/home/pyAlpine/.local/bin"

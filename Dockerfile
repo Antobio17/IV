@@ -1,4 +1,4 @@
-FROM python:3.8.0-alpine
+FROM python:3.8.10-alpine
 LABEL version="0.1.2" maintainer="antoniojr997@gmail.com"
 
 RUN apk update \
@@ -21,7 +21,7 @@ COPY pyproject.toml tasks.py /app/test/
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
 # Hacemos la instalación como usuario root ya que algunos paquetes como pyflakes lo necesitan.
 USER root 
-RUN pip install '.[project.optional-dependencies]'
+RUN flit install
 
 # Ejecución de los tests.
 USER pyAlpine 

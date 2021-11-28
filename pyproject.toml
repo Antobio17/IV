@@ -1,8 +1,8 @@
 [project]
-name = "iv"
+name = "my_hairdressing_app"
 version = "2021.11"
 description = "Organizador de agendas para peluquerías"
-requires-python = "==3.8.0"
+requires-python = "==3.8.10"
 authors = [
     {email = "antoniojr997@gmail.com"},
     {name = "Antonio"}
@@ -22,7 +22,6 @@ checker = [
     "pyflakes == 2.4.0",
 ]
 managers = [
-    "flit == 3.5.1",
     "invoke == 1.6.0",
 ]
 

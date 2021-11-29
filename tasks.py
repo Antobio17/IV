@@ -9,7 +9,7 @@ def installdeps(c):
     print("Instalando las dependencias...")
     
     try:
-        run("flit install")
+        run("poetry install")
         print("La instalación ha terminado con éxito!")
     except Exception:
         print("Ha ocurrido un error en la instalación.")

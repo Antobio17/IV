@@ -1,32 +1,20 @@
-[project]
+[tool.poetry]
 name = "my_hairdressing_app"
 version = "2021.11"
 description = "Organizador de agendas para peluquerías"
-requires-python = "==3.8.10"
-authors = [
-    {email = "antoniojr997@gmail.com"},
-    {name = "Antonio"}
-]
-maintainers = [
-    {name = "Antonio", email = "antoniojr997@gmail.comv"}
-]
-classifiers = [
-    "Programming Language :: Python"
-]
+authors = ["Antonio Jiménez <antoniojr997@gmail.com>"]
+license = "GPL-3.0-or-later"
 
-[project.optional-dependencies]
-tester = [
-    "pytest == 6.2.5",
-]
-checker = [
-    "pyflakes == 2.4.0",
-]
-managers = [
-    "invoke == 1.6.0",
-]
+[tool.poetry.dependencies]
+python = "==3.8.10"
+
+[tool.poetry.dev-dependencies]
+invoke = "^1.6.0"
+pytest = "^6.2.5"
+pyflakes = "^2.4.0"
 
 [build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 

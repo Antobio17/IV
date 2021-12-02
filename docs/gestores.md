@@ -2,7 +2,7 @@
 
 Para el uso de los siguientes gestores se deberán tener previamente instalados en el equipo.
 
-## Gestor de dependencias: _Pip_ :arrow_down:
+## Gestor de dependencias :arrow_down:
 
 Según el [PEP 621](https://www.python.org/dev/peps/pep-0621/) debemos almacenar los metadatos del proyecto en un fichero llamado **pyproject.toml**. En el almacenaremos información referente al proyecto (nombre, descripción...), a los usuarios implicados (autores, mantenedores...), dependencias, entre otras cosas.
 En este proyecto se añadirá la impormación básica y las dependencias requeridas ya que, por el momento no necesitamos configuración adicional.

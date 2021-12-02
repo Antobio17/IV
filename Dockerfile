@@ -2,10 +2,7 @@ FROM python:3.8.10-slim
 LABEL version="0.1.2" maintainer="antoniojr997@gmail.com"
 
 RUN apt-get update \
-    # Al ser la versión slim del contenedor necesitamos instalar la libreria gcc.
-    # && apt-get install gcc -y \
     && pip install poetry \
-    # && apt-get clean \
     # Creamos el usuario:
         # Flag -r: crea una cuenta del sistema.
         # Flag -m: crea el directorio personal del usuario.
@@ -21,12 +18,10 @@ COPY poetry.lock pyproject.toml tasks.py /app/test/
 
 # Añadimos a PATH el directorio para el log de Python.
 ENV PATH = "$PATH:/home/pyContainer/.local/bin"
- 
 
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
 RUN poetry config virtualenvs.create false \
     && poetry install
 
 # Ejecución de los tests.
-USER pyContainer
 ENTRYPOINT ["invoke", "test"]

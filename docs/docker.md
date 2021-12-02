@@ -15,8 +15,7 @@ Pero para realmente comprobar la veracidad de esto, la mejor opción es configur
 ### python:3.8.0-alpine
 
 Partiendo de un Dockerfile lo mas simple posible se han hecho pruebas de construcción del contenedor para ver que problemas nos podíamos encontrar:
-- El primer "problema" que nos hemos encontrado ha sido la necesidad de instalar algunas librerias para poder instalar _Poetry_ como **Rust** y **Cargo** entre otras.
-- El segundo y último incomveniente ha surgido a la hora de ejecutar el contendor ya que era necesaria la instalación previa de _bash_ para el uso de **invoke**.
+- Uno de los "problemas" que nos hemos encontrado ha sido la necesidad de instalar algunas librerias para poder instalar _Poetry_ como **Rust** y **Cargo** entre otras.
 
 Para medir el tiempo que tarda en construirse el contenedor se ha lanzado el comando:
 
@@ -47,7 +46,7 @@ Tests superados con éxito!
 
 ### python:3.8.0-slim
 
-Partiendo de un Dockerfile lo mas simple posible se han hecho pruebas de construcción del contenedor para ver que problemas nos podíamos encontrar. Esta vez solo hemmos tenido que solucionar el problema del usuario con privilegios (como era obvio). Sin embargo no hemos tenido que instalar otros paquetes como _bash_.
+Partiendo de un Dockerfile lo mas simple posible se han hecho pruebas de construcción del contenedor para ver que problemas nos podíamos encontrar. Esta vez no hemos tenido que instalar ninguna dependencia y el contenedor se ha construido con cierta facilidad.
 
 Para medir el tiempo que tarda en construirse el contenedor se ha vuelto a lanzar el comando:
 

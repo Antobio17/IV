@@ -26,7 +26,8 @@ COPY poetry.lock pyproject.toml tasks.py /app/test/
 ENV PATH = "$PATH:/home/pyAlpine/.local/bin"
 
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
-RUN poetry install --no-root 
+RUN poetry config virtualenvs.create false \
+    && poetry install 
 
 # Ejecución de los tests.
 ENTRYPOINT ["invoke", "test"]

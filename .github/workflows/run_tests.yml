@@ -32,3 +32,4 @@ jobs:
     - name: Lanzar tests
       run: |
         invoke test
+        

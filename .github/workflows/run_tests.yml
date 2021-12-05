@@ -1,0 +1,33 @@
+name: Lanzar tests
+
+on:
+  push:
+    paths:
+      - 'my_hairdressing_app/**'
+      - 'testing/**'
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["2.7", "3.8.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Instalar dependencias
+      run: |
+        python -m pip3 install --upgrade pip
+        python -m pip3 install poetry
+        poetry config virtualenvs.create false
+        poetry install
+    - name: Lanzar tests
+      run: |
+        invoke test

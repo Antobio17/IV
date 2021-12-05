@@ -1,0 +1,14 @@
+language: python
+python:
+  - "2.7"
+  - "3.8.10"
+  - "nightly"
+
+# Comandos para instalar las dependencias
+install:
+  - pip install poetry
+  - poetry install
+  
+# Comandos para lanzar los tests
+script:
+  - invoke test

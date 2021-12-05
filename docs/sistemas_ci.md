@@ -60,3 +60,15 @@ script:
 ![Steps del pipeline en CircleCI](/docs/images/steps_circleci.png "Steps del pipeline en CircleCI")
 
 - Como estamos usando  nuestra propia imagen _Docker_ desplegada en **Dockerhub** no necesitamos configurar el manejo de la cache en nuestro **YAML** ya que todas las dependencias vienen instaladas en la imagen. Así le sacamos partido a nuestro _Dockerfile_ construido facilitándonos la configuración de **Circle CI** en nuestro repositorio.
+
+## Github Actions :octocat:
+
+Al igual que nuestra **Github Action** para construir y subir la imagen _Docker_ a _DockerHub_ podemos crear otra para pasar los tests del repositorio cuando deseemos.
+
+### Pasos de configuración :gear:
+
+- Lo primero crear el archivo encargado de la ejecución de los tests y añadirlo al directorio **.github/workflows/**.
+- Una vez creado comenzaremos configurando cuando queremos que se lance la **Github Action**. En este caso, como queremos usarla para comprobar los tests únicamente se lanzará cuando se modifique algún archivo del directorio **my_hairdressing_app/** o del directorio **testing/**.
+- Ahora pasamos a configurar el _job_ que ejecutará los tests. Al igual que en **Azure Pipelines** podemos configurar la acción para que compruebe diferentes versiones de _Python_. Vamos a seguir las buenas prácticas a la hora de construir el _job_ tal y como se indica en el repositorio oficial de [Github Actions](https://github.com/actions/starter-workflows/blob/main/ci/python-package.yml).
+
+![Github Action para tests](/docs/images/tests_github_action.png "Github Action para tests")

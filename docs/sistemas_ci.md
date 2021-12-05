@@ -40,3 +40,23 @@ script:
 ![Job con error](/docs/images/failed_job_travis.png "Job con error")
 
 ![Job ejecutado con éxito](/docs/images/successfull_job_travis.png "Job ejecutado con éxito")
+
+## Circle CI :hammer_and_wrench:
+
+### Pasos de configuración :gear:
+
+- Como cada uno de los anteriores _Sistemas de CI_ lo primero que debemos hacer es iniciar sesión mediante nuestra cuenta de _Github_ y autorizar el uso de **CircleCI**.
+
+- Una vez enlazadas las cuentas y elegido el repositorio podremos pasar a configurar nuestro **YAML** de **CircleCI**. En este caso vamos a hacer uso de nuestra imagen construida y desplegada en **Dockerhub**.
+
+![Configuración del YAML en CircleCI](/docs/images/yaml_configuration_circleci.png "Configuración del YAML en CircleCI")
+
+- Una vez configurado el **YAML** podremos commitear los cambios y lanzarlo. Esto creará un _Pipeline_ donde se lanzarán los _jobs_ especificados en el archivo de configuración.
+
+![Pipelines en CircleCI](/docs/images/pipelines_circleci.png "Pipelines en CircleCI")
+
+- Además, podremos ver el _log_ step por step de la ejecución de nuestro _pipeline_.
+
+![Steps del pipeline en CircleCI](/docs/images/steps_circleci.png "Steps del pipeline en CircleCI")
+
+- Como estamos usando  nuestra propia imagen _Docker_ desplegada en **Dockerhub** no necesitamos configurar el manejo de la cache en nuestro **YAML** ya que todas las dependencias vienen instaladas en la imagen. Así le sacamos partido a nuestro _Dockerfile_ construido facilitándonos la configuración de **Circle CI** en nuestro repositorio.

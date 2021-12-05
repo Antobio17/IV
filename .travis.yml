@@ -1,3 +1,4 @@
+# Configuración de trigger build para Travis CI
 language: python
 python:
   - "2.7"

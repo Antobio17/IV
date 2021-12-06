@@ -11,7 +11,7 @@ pool:
 strategy:
   matrix:
     Python3.6.15:
-      python.version: '3.6.15'
+      python.version: '3.7.12'
     Python3.8.12:
       python.version: '3.8.12'
     Python3.10.0:

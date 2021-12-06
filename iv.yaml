@@ -4,3 +4,7 @@ automatizar:
   fichero: tasks.py
   orden: invoke
 test: tests/test_citas.py
+CI: 
+  - .circleci/config.yml
+  - azure-pipelines.yml
+  - .github/workflows/run_tests.yml

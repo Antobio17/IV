@@ -9,8 +9,8 @@ trigger:
     - '*'
   paths:
     include:
-      - my_hairdressing_app/*
-      - testing/*
+    - my_hairdressing_app
+    - testing
 
 pool:
   vmImage: ubuntu-latest

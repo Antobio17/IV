@@ -106,5 +106,3 @@ Al ejecutar los _jobs_ con versiones específicas de _Python_ obtenemos el warni
 ---
 
 Para los requisitos especificados los cuatro **Sistemas de Integración Continua** testeados nos han dado buenos resultados con una facil configuración e integración. Sin embargo uno queda descartado por no tener una versión _freemium_ y solo tener un mes de prueba como es el caso de **Travis**. Aunque para el objetivo de la asignatura solo se pide la integración de dos sistemas he considerado dejar **CircleCI**, **Azure Pipelines** y **Github Actions**.
-
-Por último, aunque estamos utilizando la versión _freemium_ **Azure Pipelines** tenemos 1800 minutos como límite de ejecución al mes (suficiente para este proyecto). Lo que haremos será configurar el **YAML** para que solo se lance cuando algún archivo del directorio **my_hairdressing_app/** o del directorio **testing/** han sido modificados.

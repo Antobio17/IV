@@ -1,5 +1,8 @@
 # MyHairdressingAPP :money_mouth_face:
 
+[![CircleCI Tests Status](https://circleci.com/gh/Antobio17/IV/tree/master.svg?style=svg)](https://circleci.com/gh/Antobio17/IV/?branch=master)
+[![Build Status](https://dev.azure.com/Antobio17/IV/_apis/build/status/Antobio17.IV?branchName=master)](https://dev.azure.com/Antobio17/IV/_build/latest?definitionId=2&branchName=master)
+
 ## Descripción del problema :spiral_notepad:
 
 Dado un caso real, en donde a una peluquería normalmente acudía la gente sin previo aviso para esperar a poder ser atendida, tuvo que adaptarse a las nuevas normativas y habilitar un teléfono para la reserva de citas debido al COVID-19.
@@ -59,3 +62,7 @@ invoke test
 ## Docker :computer:
 
 Puedes acceder a la información de contenerización para esta aplicación desde [aquí](docs/docker.md).
+
+## Sistemas de Integración Continua :recycle:
+
+Puedes acceder a la información de los Sistemas de Integración Continua para esta aplicación desde [aquí](docs/sistemas_ci.md).

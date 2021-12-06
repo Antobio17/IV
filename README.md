@@ -1,7 +1,7 @@
 # MyHairdressingAPP :money_mouth_face:
 
-![Tests Status](https://github.com/github/docs/actions/workflows/run_tests.yml/badge.svg)
-![Docker Image Status](https://github.com/github/docs/actions/workflows/dockerhub.yml/badge.svg)
+![Tests Status](https://github.com/Antobio17/IV/actions/workflows/run_tests.yml/badge.svg)
+![Docker Image Status](https://github.com/Antobio17/IV/actions/workflows/dockerhub.yml/badge.svg)
 [![CircleCI Tests Status](https://circleci.com/gh/Antobio17/IV/tree/master.svg?style=svg)](https://circleci.com/gh/Antobio17/IV/?branch=master)
 [![Build Status](https://dev.azure.com/Antobio17/IV/_apis/build/status/Antobio17.IV?branchName=master)](https://dev.azure.com/Antobio17/IV/_build/latest?definitionId=2&branchName=master)
 

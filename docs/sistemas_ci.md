@@ -103,3 +103,8 @@ Al ejecutar los _jobs_ con versiones específicas de _Python_ obtenemos el warni
 
 ![Pipeline ejecutado](/docs/images/tests_azure.png "Pipeline ejecutado")
 
+---
+
+Para los requisitos especificados los cuatro **Sistemas de Integración Continua** testeados nos han dado buenos resultados con una facil configuración e integración. Sin embargo uno queda descartado por no tener una versión _freemium_ y solo tener un mes de prueba como es el caso de **Travis**. Aunque para el objetivo de la asignatura solo se pide la integración de dos sistemas he considerado dejar **CircleCI**, **Azure Pipelines** y **Github Actions**.
+
+

@@ -72,3 +72,34 @@ Al igual que nuestra **Github Action** para construir y subir la imagen _Docker_
 - Ahora pasamos a configurar el _job_ que ejecutará los tests. Al igual que en **Azure Pipelines** podemos configurar la acción para que compruebe diferentes versiones de _Python_. Vamos a seguir las buenas prácticas a la hora de construir el _job_ tal y como se indica en el repositorio oficial de [Github Actions](https://github.com/actions/starter-workflows/blob/main/ci/python-package.yml).
 
 ![Github Action para tests](/docs/images/tests_github_action.png "Github Action para tests")
+
+## Azure Pipelines :desktop_computer:
+
+Uno de los puntos muy positivos de **Azure Pipelines** es su completa y actualizada [documentación](https://docs.microsoft.com/es-es/azure/devops/pipelines), con una guía de integración con **Github** y otra de [Compilación de aplicaciones de Python](https://docs.microsoft.com/es-es/azure/devops/pipelines/ecosystems/python?view=azure-devops).
+
+### Pasos de configuración :gear:
+
+- Creamos nuestra cuenta de **Azure** accediendo mediante nuestra cuenta de **Github** y creamos el mismo repositorio que queremos enlazar, en este caso _IV_, donde construiremos nuestro **pipeline**.
+
+![Construyendo el Pipeline](/docs/images/creating_pipeline_azure.png "Construyendo el Pipeline")
+
+- En este **pipeline** podremos crear directamente un paquete _Python_ enlazado a nuestro repositorio de **Github** para ejecutar nuestra aplicación con distintas versiones de _Python_. Esto generará automáticamente un **YAML** de configuración que modificaremos para adaptarlo a nuestros gestores de dependencias y gestores de tareas. Siguiendo estos pasos el **YAML** podremos crearlo en la rama _master_ del repositorio o en una nueva rama creada a partir de esta. Como nosotros realmente lo que queremos es trabajar en la rama de nuestro Pull Request, crearemos directamente el **YAML** en nuestro proyecto y desde **Azure** al crear el _pipeline_ seleccionaremos la opcción de **_Existing Azure Pipelines YAML file_**.
+
+![YAML existente en repositorio](/docs/images/existing_yaml_azure.png "YAML existente en repositorio")
+
+![Configurando el YAML](/docs/images/yaml_configuration_azure.png "Configurando el YAML")
+
+- La primera vez que ejecutemos nuestro **pipeline** dará error. Esto es debido a que necesitamos solicitar en un [formulario](https://aka.ms/azpipelines-parallelism-request) una "subvención gratuita de paralelismo" para poder lanzar los **jobs** con las diferentes versiones de _Python_. Una vez solicitado y concedido procederemos a ejecutarlo:
+
+![Versiones de Python disponibles en Azure Pipelines](/docs/images/python_versions_azure.png "Versiones de Python disponibles en Azure Pipelines")
+
+Como podemos ver no todas las versiones de _Python_ están disponibles en **Azure Pipelines** por lo que tendremos que elegir las mas cercanas a nuestro interés.
+
+> ##[warning]Specifying an exact version is not recommended on Microsoft-Hosted agents. Patch versions of Python can be replaced by new ones on Hosted agents without notice, which will cause builds to fail unexpectedly. It is recommended to specify only major or major and minor version (Example: `3` or `3.6`)
+
+Al ejecutar los _jobs_ con versiones específicas de _Python_ obtenemos el warning anterior. En este nos avisa de que no está recomendado utilizar una versión exacta ya que pueden cambiar en los _Hosted agents_. Para evitarnos errores inesperados pasaremos a especificar las versiones únicamente como _major y minor_.
+
+![Pipeline ejecutado](/docs/images/executed_pipeline_azure.png "Pipeline ejecutado")
+
+![Pipeline ejecutado](/docs/images/tests_azure.png "Pipeline ejecutado")
+

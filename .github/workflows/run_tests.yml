@@ -1,4 +1,4 @@
-name: Lanzar tests
+name: Tests
 
 on:
   push:

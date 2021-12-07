@@ -1,4 +1,4 @@
-name: Publicar imagen Docker
+name: Dockerhub
 
 on:
   push:

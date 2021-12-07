@@ -6,8 +6,6 @@ on:
       - 'my_hairdressing_app/**'
       - 'testing/**'
       - '.github/workflows/run_tests.yml'
-    branches:
-      - '*'
 
 jobs:
   build:
@@ -15,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.7", "3.8.10", "3.10"]
+        python-version: ["3.7", "3.8", "3.10"]
 
     steps:
     - uses: actions/checkout@v2

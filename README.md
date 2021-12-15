@@ -68,3 +68,7 @@ Puedes acceder a la información de contenerización para esta aplicación desde
 ## Sistemas de Integración Continua :recycle:
 
 Puedes acceder a la información de los Sistemas de Integración Continua para esta aplicación desde [aquí](docs/sistemas_ci.md).
+
+## # Configuración de un Sistema de log :writing_hand:
+
+Puedes acceder a la información del Sistema de logging para esta aplicación desde [aquí](docs/logging.md).

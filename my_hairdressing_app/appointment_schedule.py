@@ -14,7 +14,6 @@ class AppointmentSchedule:
 
     Attributes
     ----------
-    
     appointments : dict
         Diccionario que almacenará las citas en un día y turno especifico.
 

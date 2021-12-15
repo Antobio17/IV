@@ -1,6 +1,6 @@
 from .appointment_type import AppointmentType
 
-class PeinadosParaBoda(AppointmentType):
+class WeddingHairstyle(AppointmentType):
     """
     Objeto valor que representa el tipo de cita "Peinados de boda".
 

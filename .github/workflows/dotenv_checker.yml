@@ -20,21 +20,21 @@ jobs:
       name: Checkout del repositorio 
 
     - name: Comprobar que el dotenv está añadido al gitignore
-      id: checker
+      id: check_gitignore
       run: echo "::set-output name=result::$(sh ./.github/workflows/gitignore_checker.sh)"
 
     - name: Chek dotenv en .gitignore 
-      if: steps.checker.outputs.result != 'true'
+      if: steps.check_gitignore.outputs.result != 'true'
       uses: actions/github-script@v3
       with:
         script: |
           core.setFailed('❌ El fichero dotenv no está añadido en el .gitignore')
 
     - name: Check file existence
-        id: check_file
-        uses: andstor/file-existence-action@v1
-        with:
-          files: ".env"
+      id: check_file
+      uses: andstor/file-existence-action@v1
+      with:
+        files: ".env"
 
     - name: Existe dotenv
       if: steps.check_files.outputs.files_exists != 'true'

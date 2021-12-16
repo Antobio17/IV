@@ -7,4 +7,4 @@ El fichero **dotenv**, al ser el encargado de almacenar nuestra configuración p
 
 ---
 
-Esto se define en las issues [#40](https://github.com/Antobio17/IV/issues/40) y [#45](https://github.com/Antobio17/IV/issues/45) 
+Esto se define en las issues [#40](https://github.com/Antobio17/IV/issues/40) y [#45](https://github.com/Antobio17/IV/issues/45). 

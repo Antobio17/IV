@@ -6,6 +6,7 @@ on:
       - '.env'
       - '.gitignore'
       - '.github/workflows/dotenv_checker.yml'
+      - '.github/workflows/gitignore_checker.sh'
     branches:
       - '*'
     
@@ -23,7 +24,7 @@ jobs:
       run: sh ./.github/workflows/gitignore_checker.sh
 
     - name: Chek dotenv in .gitignore 
-      if: steps.checker.outputs.run == 'TRUE'
+      if: steps.checker.outputs.run != 'TRUE'
       uses: actions/github-script@v3
       with:
         script: |

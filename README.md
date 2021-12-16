@@ -53,7 +53,7 @@ invoke check
 
 ### Uso de tests
 
-Puedes acceder a la información relativa a los _tests_ desde [aquí](docs/tests.md).
+Puedes acceder a la información relativa a los **tests** desde [aquí](docs/tests.md).
 
 La orden que se deberá ejecutar es la siguiente:
 
@@ -63,12 +63,16 @@ invoke test
 
 ## Docker :computer:
 
-Puedes acceder a la información de contenerización para esta aplicación desde [aquí](docs/docker.md).
+Puedes acceder a la información de **contenerización** para esta aplicación desde [aquí](docs/docker.md).
 
 ## Sistemas de Integración Continua :recycle:
 
-Puedes acceder a la información de los Sistemas de Integración Continua para esta aplicación desde [aquí](docs/sistemas_ci.md).
+Puedes acceder a la información de los **Sistemas de Integración Continua** para esta aplicación desde [aquí](docs/sistemas_ci.md).
+
+## Almacenamiento y gestión de la configuración :gear:
+
+Puedes acceder a la información del **almacenamiento y gestión de la configuración** desde [aquí](docs/config.md).
 
 ## # Configuración de un Sistema de log :writing_hand:
 
-Puedes acceder a la información del Sistema de logging para esta aplicación desde [aquí](docs/logging.md).
+Puedes acceder a la información del **Sistema de logging** para esta aplicación desde [aquí](docs/logging.md).

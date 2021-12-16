@@ -21,10 +21,10 @@ jobs:
 
     - name: Comprobar que el dotenv está añadido al gitignore
       id: checker
-      run: sh ./.github/workflows/gitignore_checker.sh
+      run: echo "::set-output name=result::$(sh ./.github/workflows/gitignore_checker.sh)"
 
     - name: Chek dotenv in .gitignore 
-      if: steps.checker.outputs.run != 'TRUE'
+      if: steps.checker.outputs.result != 'true'
       uses: actions/github-script@v3
       with:
         script: |

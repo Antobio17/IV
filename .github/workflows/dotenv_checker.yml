@@ -1,0 +1,30 @@
+name: Dotenv
+
+on:
+  push:
+    paths:
+      - '.env'
+      - '.gitignore'
+      - '.github/workflows/dotenv_checker.yml'
+    branches:
+      - '*'
+    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout del repositorio 
+
+    - name: Comprobar que el dotenv está añadido al gitignore
+      id: checker
+      run: sh ./.github/workflows/gitignore_checker.sh
+
+    - name: Chek dotenv in .gitignore 
+      if: steps.checker.outputs.run != 'TRUE'
+      uses: actions/github-script@v3
+      with:
+        script: |
+          core.setFailed('El fichero dotenv no está añadido en el .gitignore :warning:')

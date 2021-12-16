@@ -1,3 +1,3 @@
 #!/bin/bash
 
-if grep -q  egg ".gitignore"; then echo "TRUE"; else echo "FALSE"; fi
+if grep -Fxq ".env" .gitignore; then echo "TRUE"; else echo "FALSE"; fi

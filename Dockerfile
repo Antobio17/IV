@@ -3,6 +3,7 @@ LABEL version="0.1.2" maintainer="antoniojr997@gmail.com"
 
 RUN apt-get update \
     && pip install poetry \
+    && pip install pyyaml \
     # Creamos el usuario:
         # Flag -r: crea una cuenta del sistema.
         # Flag -m: crea el directorio personal del usuario.

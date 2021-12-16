@@ -23,8 +23,8 @@ jobs:
       run: sh ./.github/workflows/gitignore_checker.sh
 
     - name: Chek dotenv in .gitignore 
-      if: steps.checker.outputs.run != 'TRUE'
+      if: steps.checker.outputs.run == 'TRUE'
       uses: actions/github-script@v3
       with:
         script: |
-          core.setFailed('El fichero dotenv no está añadido en el .gitignore :warning:')
+          core.setFailed('❌ El fichero dotenv no está añadido en el .gitignore')

@@ -1,5 +1,5 @@
-from my_hairdressing_app.appointment_schedule import AppointmentSchedule
 from my_hairdressing_app.logging import Logging
+from my_hairdressing_app.appointment_schedule import AppointmentSchedule
 from my_hairdressing_app.errors import BadDateFormatError, ShiftNotExistError
 
 class AppointmentScheduleManager:
@@ -10,7 +10,7 @@ class AppointmentScheduleManager:
     -------
     book_appointment(self, date: str, shift, appointment)
     """
-    def __init__(self):
+    def __init__(self, test = False):
         """
         Constructor de la entidad.
 
@@ -19,7 +19,7 @@ class AppointmentScheduleManager:
         None
         """
         self.schedule = AppointmentSchedule()
-        self.logger = Logging(__name__).get_logger()
+        self.logger = Logging(__name__, test).get_logger()
 
 
     def book_appointment(self, date: str, shift, appointment):

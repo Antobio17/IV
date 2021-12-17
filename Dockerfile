@@ -3,7 +3,6 @@ LABEL version="0.1.2" maintainer="antoniojr997@gmail.com"
 
 RUN apt-get update \
     && pip install poetry \
-    && pip install pyyaml \
     # Creamos el usuario:
         # Flag -r: crea una cuenta del sistema.
         # Flag -m: crea el directorio personal del usuario.
@@ -23,7 +22,8 @@ ENV PATH = "$PATH:/home/pyContainer/.local/bin"
 
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
 RUN poetry config virtualenvs.create false \
-    && poetry install
+    && poetry install \
+    && poetry add pyyaml
 
 # Ejecución de los tests.
 ENTRYPOINT ["invoke", "test"]

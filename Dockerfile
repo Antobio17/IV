@@ -22,8 +22,8 @@ ENV PATH = "$PATH:/home/pyContainer/.local/bin"
 
 # Instalamos las dependencias para instalar a su vez el gestor de tareas
 RUN poetry config virtualenvs.create false \
-    && poetry install \
-    && poetry add pyyaml
+    && poetry add pyyaml \
+    && poetry install
 
 # Ejecución de los tests.
 ENTRYPOINT ["invoke", "test"]

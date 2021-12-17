@@ -18,7 +18,7 @@ logging:
       class: logging.FileHandler
       level: INFO
       formatter: standard
-      filename: '/temp/app.log'
+      filename: '/tmp/app.log'
       
   root:
     level: INFO

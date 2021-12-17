@@ -8,3 +8,4 @@ CI:
   - .circleci/config.yml
   - azure-pipelines.yml
   - .github/workflows/run_tests.yml
+configuracion: my_hairdressing_app/config.py

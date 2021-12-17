@@ -15,7 +15,7 @@ USER pyContainer
 WORKDIR /app/test
 
 # Movemos el fichero de depencencias y el fuente del gestor de tareas al directorio de trabajo.
-COPY poetry.lock pyproject.toml config.yml tasks.py /app/test/
+COPY poetry.lock pyproject.toml tasks.py /app/test/
 
 # Añadimos a PATH el directorio para el log de Python.
 ENV PATH = "$PATH:/home/pyContainer/.local/bin"

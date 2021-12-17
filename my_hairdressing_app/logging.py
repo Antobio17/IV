@@ -1,5 +1,5 @@
-from my_hairdressing_app.config import Config
 import logging.config
+from my_hairdressing_app.config import Config
 
 class Logging:
     """
@@ -9,7 +9,7 @@ class Logging:
     -------
     log(self, level: str, message: str)
     """
-    def __init__(self, module_name: str):
+    def __init__(self, module_name: str, test = False):
         """
         Constructor de la entidad.
 
@@ -17,7 +17,7 @@ class Logging:
         ----------
         None
         """
-        logging.config.dictConfig(Config().get_logging_config())
+        logging.config.dictConfig(Config(test).get_logging_config())
         self.logger = logging.getLogger(module_name)
 
     def get_logger(self):

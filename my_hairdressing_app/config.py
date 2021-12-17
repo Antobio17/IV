@@ -13,7 +13,7 @@ class Config:
     -------
     get_logging_config(self, date: str, shift, appointment)
     """
-    def __init__(self):
+    def __init__(self, test = False):
         """
         Constructor de la entidad.
 
@@ -21,11 +21,15 @@ class Config:
         ----------
         None
         """
+        self.test = test
         try:
             with open('config.yml', 'r') as stream:
                 self.app_config = yaml.load(stream, Loader=yaml.FullLoader)
         except Exception:
             self.app_config = Config.get_default_dict_config()
+
+        if self.test:
+           self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
 
 
 

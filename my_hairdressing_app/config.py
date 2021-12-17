@@ -71,7 +71,7 @@ class Config:
                         'class': 'logging.FileHandler', 
                         'level': 'INFO', 
                         'formatter': 'standard', 
-                        'filename': 'app.log'
+                        'filename': '/var/log/app.log'
                     }, 
                 },
                 'root': {

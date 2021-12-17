@@ -21,8 +21,13 @@ class Config:
         ----------
         None
         """
-        with open('config.yml', 'r') as stream:
-            self.app_config = yaml.load(stream, Loader=yaml.FullLoader)
+        try:
+            with open('config.yml', 'r') as stream:
+                self.app_config = yaml.load(stream, Loader=yaml.FullLoader)
+        except Exception:
+            self.app_config = Config.get_default_dict_config()
+
+
 
     def get_logging_config(self):
         """
@@ -34,3 +39,44 @@ class Config:
             Configuración del logging.
         """
         return self.app_config['logging']
+
+
+    @staticmethod
+    def get_default_dict_config():
+        """
+        Método que devuelve la configuración del logging.
+
+        Returns
+        -------
+        default_config : dict
+            Configuración por defecto de la aplicación.
+        """
+        return { 
+            'logging' : {
+                'version': 1, 
+                'formatters': {
+                    'standard': {
+                        'datefmt': '%d-%m-%Y %H:%M:%S', 
+                        'format': '%(asctime)s %(levelname)s: %(name)s::%(funcName)s -> (linea %(lineno)d) %(message)s'
+                    }
+                }, 
+                'handlers': {
+                    'console': {
+                        'level': 'WARNING',
+                        'class': 'logging.StreamHandler',
+                        'formatter': 'standard',
+                        'stream': 'ext://sys.stdout'
+                    }, 
+                    'file': {
+                        'class': 'logging.FileHandler', 
+                        'level': 'INFO', 
+                        'formatter': 'standard', 
+                        'filename': 'app.log'
+                    }, 
+                },
+                'root': {
+                    'level': 'INFO',
+                    'handlers': ['console', 'file']
+                }
+            }
+        }

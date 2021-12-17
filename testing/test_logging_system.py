@@ -38,4 +38,3 @@ def test_logger(logging_config, schedule_manager, normal_haircut):
     os.remove(file_name)
     
     assert True
-

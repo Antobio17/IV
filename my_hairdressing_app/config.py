@@ -21,14 +21,13 @@ class Config:
         ----------
         None
         """
-        self.test = test
         try:
             with open('config.yml', 'r') as stream:
                 self.app_config = yaml.load(stream, Loader=yaml.FullLoader)
         except Exception:
             self.app_config = Config.get_default_dict_config()
-
-        if self.test:
+        print(test)
+        if test:
            self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
 
 

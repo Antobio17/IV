@@ -8,7 +8,7 @@ RUN apt-get update \
         # Flag -m: crea el directorio personal del usuario.
         # Flag -g: indicamos el nombre del grupo primario de la nueva cuenta.
     && groupadd -r pyContainer && useradd -m -g pyContainer pyContainer \
-    && chmod 755 /var/log
+    && chmod 755 /var/log/
          
 USER pyContainer
 

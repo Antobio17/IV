@@ -7,9 +7,8 @@ RUN apt-get update \
         # Flag -r: crea una cuenta del sistema.
         # Flag -m: crea el directorio personal del usuario.
         # Flag -g: indicamos el nombre del grupo primario de la nueva cuenta.
-    && groupadd -r pyContainer && useradd -m -g pyContainer pyContainer \
-    && mkdir 755 /var/log   
-     
+    && groupadd -r pyContainer && useradd -m -g pyContainer pyContainer
+         
 USER pyContainer
 
 # Definición del directorio de trabajo.

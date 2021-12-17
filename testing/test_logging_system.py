@@ -9,7 +9,7 @@ SHIFT = 'MORNING'
 
 @pytest.fixture
 def schedule_manager():
-    return AppointmentScheduleManager()
+    return AppointmentScheduleManager(test = True)
 
 @pytest.fixture
 def normal_haircut():
@@ -17,7 +17,7 @@ def normal_haircut():
     
 @pytest.fixture
 def logging_config():
-    return Config().get_logging_config()
+    return Config(test = True).get_logging_config()
 
 
 def test_logger(logging_config, schedule_manager, normal_haircut):

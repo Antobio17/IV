@@ -1,3 +1,3 @@
 #!/bin/bash
 
-if grep -Fxq ".env" .gitignore; then echo 'true'; else echo 'false'; fi
+if grep -Fxq "config.yml" .gitignore; then echo 'true'; else echo 'false'; fi

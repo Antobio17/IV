@@ -1,9 +1,15 @@
 # Almacenamiento y gestión de la configuración :gear:
-Para almacenar la configuración se ha optado por usar dos ficheros: **YAML** y **dotenv**. Con los ficheros **YAML** tenemos la opción de construir estructuras de datos y definir tipos lo que nos dará una amplia posibilidad para almacenar la configuración de nuestra aplicación, como por ejemplo la configuración de logging.
-El fichero **dotenv** se usará para la configuración privada como claves, IPs, etc. Al ser valores de tipo _clave=valor_ una mayor simplicidad pero da menos posibilidad a construir objetos.
+Los requisitos para almacenar nuestra configuración son:
+- Poder almacenar la configuración de manera remota.
+- Tener un fallback para cuando no podamos acceder remotamente a ella con un archivo de configuración en nuestro repositorio local.
+- Tener un segundo fallback para cuando no podemos acceder a ninguno de los dos anteriores con configuración por defecto en el propio código.
+- Poder construir estructutas de datos mas complejas que las **clave/valor**.
 
-## Github Action para comprobación de dotenv
-El fichero **dotenv**, al ser el encargado de almacenar nuestra configuración privada será esencial que no se añada nunca al repositorio remoto. Para ello se ha creado una **Github Action** que en primer lugar comprobará, mediante un script, si el _.gitignore_ contiene el valor _.env_. Además comprobará si el **dotenv** se ha commiteado y subido al repositorio.
+## Configuración local: config.yml
+Para almacenar la configuración se ha optado por usar un fichero **YAML** . Con los ficheros **YAML** tenemos la opción de construir estructuras de datos y definir tipos lo que nos dará una amplia posibilidad para almacenar la configuración de nuestra aplicación, como por ejemplo la configuración de logging.
+
+### Github Action
+El fichero **config.yml**, al ser el encargado de almacenar nuestra configuración será esencial que no se añada nunca al repositorio remoto. Para ello se ha creado una **Github Action** que en primer lugar comprobará, mediante un script, si el _.gitignore_ contiene el valor _config.yml_. Además comprobará si el archivo no se ha commiteado y subido al repositorio.
 
 ---
 

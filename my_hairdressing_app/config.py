@@ -1,4 +1,6 @@
 import yaml
+import etcd3
+import json
 
 class Config:
     """
@@ -25,10 +27,21 @@ class Config:
             with open('config.yml', 'r') as stream:
                 self.app_config = yaml.load(stream, Loader=yaml.FullLoader)
         except Exception:
-            self.app_config = Config.get_default_dict_config()
-        print(test)
+            self.app_config = None 
+
+        if self.app_config != None and 'logging' not in self.app_config:
+            try:
+                etcd = etcd3.client(self.app_config['host'], self.app_config['port'])
+                self.app_config['logging'] = json.loads(etcd.get('/config/logging'))
+            except Exception:
+                self.app_config = Config.get_default_dict_config()
+       
+
         if test:
-           self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
+            try:
+                self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
+            except KeyError:
+                raise KeyError('No se ha configurado el nombre de archivo de log correctamente')
 
 
 

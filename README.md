@@ -74,7 +74,7 @@ Puedes acceder a la información de los **Sistemas de Integración Continua** pa
 
 Puedes acceder a la información del **almacenamiento y gestión de la configuración** desde [aquí](docs/config.md).
 
-# Almacenamiento y gestión de la configuración :gear:
+## Almacenamiento y gestión de la configuración :gear:
 
 Puedes acceder a la información del **Almacenamiento y gestión de la configuración** para esta aplicación desde [aquí](docs/config.md).
 

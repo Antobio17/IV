@@ -35,6 +35,8 @@ class Config:
                 self.app_config['logging'] = json.loads(etcd.get('/config/logging'))
             except Exception:
                 self.app_config = Config.get_default_dict_config()
+        else:
+            self.app_config = Config.get_default_dict_config()
        
 
         if test:

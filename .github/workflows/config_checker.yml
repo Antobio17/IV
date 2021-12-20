@@ -1,4 +1,4 @@
-name: Dotenv
+name: Check config
 
 on:
   push:

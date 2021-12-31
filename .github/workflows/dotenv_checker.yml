@@ -1,11 +1,11 @@
-name: Check config
+name: Check dotenv
 
 on:
   push:
     paths:
-      - 'config.yml'
+      - '.env'
       - '.gitignore'
-      - '.github/workflows/config_checker.yml'
+      - '.github/workflows/dotenv_checker.yml'
       - '.github/workflows/gitignore_checker.sh'
     branches:
       - '*'
@@ -19,16 +19,16 @@ jobs:
     - uses: actions/checkout@v2
       name: Checkout del repositorio 
 
-    - name: Comprobar que config.yml está añadido al gitignore
+    - name: Comprobar que .env está añadido al gitignore
       id: check_gitignore
       run: echo "::set-output name=result::$(sh ./.github/workflows/gitignore_checker.sh)"
 
-    - name: Chek config.yml en .gitignore 
+    - name: Chek .env en .gitignore 
       if: steps.check_gitignore.outputs.result != 'true'
       uses: actions/github-script@v3
       with:
         script: |
-          core.setFailed('❌ El fichero config.yml no está añadido en el .gitignore')
+          core.setFailed('❌ El fichero .env no está añadido en el .gitignore')
 
     - name: Check file existence
       id: check_file
@@ -41,4 +41,4 @@ jobs:
       uses: actions/github-script@v3
       with:
         script: |
-          core.setFailed('❌ El fichero config.yml no puede añadirse al repositorio remoto!!')
+          core.setFailed('❌ El fichero .env no puede añadirse al repositorio remoto!!')

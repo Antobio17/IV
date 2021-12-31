@@ -1,6 +1,5 @@
-import yaml
+import os
 import etcd3
-import json
 
 class Config:
     """
@@ -24,19 +23,29 @@ class Config:
         None
         """
         try:
-            with open('config.yml', 'r') as stream:
-                self.app_config = yaml.load(stream, Loader=yaml.FullLoader)
+            dateformat_log = os.environ.get('DATEFORMAT_LOG')
+            format_log = os.environ.get('FORMAT_LOG')
+            level_console_log = os.environ.get('LEVEL_CONSOLE_LOG')
+            level_file_log = os.environ.get('LEVEL_FILE_LOG')
+            filename_file_log = os.environ.get('FILENAME_FILE_LOG')
+            self.app_config['logging'] = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
         except Exception:
-            self.app_config = None 
+            self.app_config = None
 
         if self.app_config != None and 'logging' not in self.app_config:
             try:
                 etcd = etcd3.client(self.app_config['host'], self.app_config['port'])
-                self.app_config['logging'] = json.loads(etcd.get('/config/logging'))
+
+                dateformat_log = etcd.get('/config/logging/DATEFORMAT_LOG')
+                format_log = etcd.get('/config/logging/FORMAT_LOG')
+                level_console_log = etcd.get('/config/logging/LEVEL_CONSOLE_LOG')
+                level_file_log = etcd.get('/config/logging/LEVEL_FILE_LOG')
+                filename_file_log = etcd.get('/config/logging/FILENAME_FILE_LOG')
+                self.app_config['logging'] = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
             except Exception:
-                self.app_config = Config.get_default_dict_config()
+                self.app_config = Config.get_dict_config()
         else:
-            self.app_config = Config.get_default_dict_config()
+            self.app_config = Config.get_dict_config()
        
 
         if test:
@@ -60,7 +69,13 @@ class Config:
 
 
     @staticmethod
-    def get_default_dict_config():
+    def get_dict_config(
+        dateformat = '%d-%m-%Y %H:%M:%S',
+        format_log = '%(asctime)s %(levelname)s: %(name)s::%(funcName)s -> (linea %(lineno)d) %(message)s',
+        level_console = 'WARNING',
+        level_file = 'INFO',
+        filename_file = '/var/log/app.log'
+    ):
         """
         Método que devuelve la configuración del logging.
 
@@ -74,22 +89,22 @@ class Config:
                 'version': 1, 
                 'formatters': {
                     'standard': {
-                        'datefmt': '%d-%m-%Y %H:%M:%S', 
-                        'format': '%(asctime)s %(levelname)s: %(name)s::%(funcName)s -> (linea %(lineno)d) %(message)s'
+                        'datefmt': dateformat, 
+                        'format': format_log
                     }
                 }, 
                 'handlers': {
                     'console': {
-                        'level': 'WARNING',
+                        'level': level_console,
                         'class': 'logging.StreamHandler',
                         'formatter': 'standard',
                         'stream': 'ext://sys.stdout'
                     }, 
                     'file': {
                         'class': 'logging.FileHandler', 
-                        'level': 'INFO', 
+                        'level': level_file, 
                         'formatter': 'standard', 
-                        'filename': '/var/log/app.log'
+                        'filename': filename_file
                     }, 
                 },
                 'root': {

@@ -19,7 +19,6 @@ class AppointmentScheduleManager:
         None
         """
         self.schedule = AppointmentSchedule()
-        self.logger = Logging(__name__, test).get_logger()
 
 
     def book_appointment(self, date: str, shift, appointment):
@@ -44,14 +43,14 @@ class AppointmentScheduleManager:
         try:
             can_book = self.schedule.book_appointment(date, shift, appointment)
             if can_book:
-                self.logger.info("Se reservó una cita para el día %s para el turno %s." % (date, shift))
+                Logging.info(__name__, "Se reservó una cita para el día %s para el turno %s." % (date, shift))
             elif not can_book:
-                self.logger.info("No se pudo reservar una cita para el día %s para el turno %s." % (date, shift))
+                Logging.info(__name__, "No se pudo reservar una cita para el día %s para el turno %s." % (date, shift))
         except BadDateFormatError:
             can_book = False
-            self.logger.critical("Fecha %s introducida para la reserva de cita no está en el formato correcto." % (date))
+            Logging.critical(__name__, "Fecha %s introducida para la reserva de cita no está en el formato correcto." % (date))
         except ShiftNotExistError:
             can_book = False
-            self.logger.critical("Turno %s introducido para la reserva de cita no existe." % (shift))            
+            Logging.critical(__name__, "Turno %s introducido para la reserva de cita no existe." % (shift))            
         
         return can_book

@@ -9,17 +9,15 @@ class Logging:
     -------
     log(self, level: str, message: str)
     """
-    def __init__(self, module_name: str, test = False):
-        """
-        Constructor de la entidad.
 
-        Parameters
-        ----------
-        None
-        """
-        logging.config.dictConfig(Config(test).get_logging_config())
-        self.logger = logging.getLogger(module_name)
+    @staticmethod
+    def info(module_name: str,  message: str):
+        logging.config.dictConfig(Config(True).get_logging_config())
+        logging.getLogger(module_name).info(message)
 
-    def get_logger(self):
-        return self.logger
+    @staticmethod
+    def critical(module_name: str, message: str):
+        logging.config.dictConfig(Config(True).get_logging_config())
+        logging.getLogger(module_name).critical(message)
+
  

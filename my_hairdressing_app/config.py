@@ -43,9 +43,9 @@ class Config:
                 filename_file_log = etcd.get('/config/logging/FILENAME_FILE_LOG')
                 self.app_config['logging'] = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
             except Exception:
-                self.app_config = Config.get_dict_config()
+                self.app_config = None
         else:
-            self.app_config = Config.get_dict_config()
+            self.app_config = None
        
 
         if test:

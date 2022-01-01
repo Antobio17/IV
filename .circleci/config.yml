@@ -11,6 +11,12 @@ jobs:
   build-and-test: # Nombre del Job
     docker:
       - image: antobio17/iv:latest
+        environment:
+          DATEFORMAT_LOG: DATEFORMAT_LOG
+          FORMAT_LOG: FORMAT_LOG
+          LEVEL_CONSOLE_LOG: LEVEL_CONSOLE_LOG
+          LEVEL_FILE_LOG: LEVEL_FILE_LOG
+          FILENAME_FILE_LOG: FILENAME_FILE_LOG
     steps:
       - checkout
       - run:

@@ -21,4 +21,5 @@ jobs:
 workflows:
   sample: # Nombre del workflow
     jobs:
-      - build-and-test
+      - build-and-test:
+          context: test_environment

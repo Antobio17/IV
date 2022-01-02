@@ -1,5 +1,6 @@
 import os
 import etcd3
+from dotenv import load_dotenv
 
 class Config:
     """
@@ -22,17 +23,17 @@ class Config:
         ----------
         None
         """
-        try:
-            dateformat_log = os.environ.get('DATEFORMAT_LOG')
-            format_log = os.environ.get('FORMAT_LOG')
-            level_console_log = os.environ.get('LEVEL_CONSOLE_LOG')
-            level_file_log = os.environ.get('LEVEL_FILE_LOG')
-            filename_file_log = os.environ.get('FILENAME_FILE_LOG')
-            self.app_config['logging'] = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
-        except Exception:
-            self.app_config = None
+        load_dotenv()
+        self.app_config = None
+        dateformat_log = os.getenv('DATEFORMAT_LOG')
+        print(dateformat_log)
+        format_log = os.getenv('FORMAT_LOG')
+        level_console_log = os.getenv('LEVEL_CONSOLE_LOG')
+        level_file_log = os.getenv('LEVEL_FILE_LOG')
+        filename_file_log = os.getenv('FILENAME_FILE_LOG')
+        self.app_config = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
 
-        if self.app_config != None and 'logging' not in self.app_config:
+        if self.app_config == None:
             try:
                 etcd = etcd3.client(self.app_config['host'], self.app_config['port'])
 
@@ -44,8 +45,6 @@ class Config:
                 self.app_config['logging'] = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
             except Exception:
                 self.app_config = None
-        else:
-            self.app_config = None
        
 
         if test:

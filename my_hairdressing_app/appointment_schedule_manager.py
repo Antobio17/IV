@@ -10,7 +10,7 @@ class AppointmentScheduleManager:
     -------
     book_appointment(self, date: str, shift, appointment)
     """
-    def __init__(self, test = False):
+    def __init__(self):
         """
         Constructor de la entidad.
 
@@ -21,7 +21,7 @@ class AppointmentScheduleManager:
         self.schedule = AppointmentSchedule()
 
 
-    def book_appointment(self, date: str, shift, appointment):
+    def book_appointment(self, date: str, shift, appointment, test = False):
         """
         Fachada para manejar la función de reserva de citas de la clase AppointmentSchedule.
 
@@ -43,14 +43,14 @@ class AppointmentScheduleManager:
         try:
             can_book = self.schedule.book_appointment(date, shift, appointment)
             if can_book:
-                Logging.info(__name__, "Se reservó una cita para el día %s para el turno %s." % (date, shift))
+                Logging.info(__name__, "Se reservó una cita para el día %s para el turno %s." % (date, shift), test)
             elif not can_book:
-                Logging.info(__name__, "No se pudo reservar una cita para el día %s para el turno %s." % (date, shift))
+                Logging.info(__name__, "No se pudo reservar una cita para el día %s para el turno %s." % (date, shift), test)
         except BadDateFormatError:
             can_book = False
-            Logging.critical(__name__, "Fecha %s introducida para la reserva de cita no está en el formato correcto." % (date))
+            Logging.critical(__name__, "Fecha %s introducida para la reserva de cita no está en el formato correcto." % (date), test)
         except ShiftNotExistError:
             can_book = False
-            Logging.critical(__name__, "Turno %s introducido para la reserva de cita no existe." % (shift))            
+            Logging.critical(__name__, "Turno %s introducido para la reserva de cita no existe." % (shift), test)            
         
         return can_book

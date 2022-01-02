@@ -51,7 +51,7 @@ class Config:
 
         if test:
             try:
-                self.app_config['logging']['handlers']['file']['fileame'] = '/tmp/app.log' 
+                self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
             except KeyError:
                 raise KeyError('No se ha configurado el nombre de archivo de log correctamente')
 

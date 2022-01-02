@@ -29,6 +29,7 @@ def test_logger(logging_config, schedule_manager, normal_haircut):
     schedule_manager.book_appointment(DAY, SHIFT, normal_haircut)
 
     file_name = logging_config['handlers']['file']['filename']
+    print(file_name)
     with open(file_name) as file:
         file_content = file.read()
         if not 'INFO' in file_content and not 'CRITICAL' in file_content:

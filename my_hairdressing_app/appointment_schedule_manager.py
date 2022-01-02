@@ -10,7 +10,7 @@ class AppointmentScheduleManager:
     -------
     book_appointment(self, date: str, shift, appointment)
     """
-    def __init__(self):
+    def __init__(self, test = False):
         """
         Constructor de la entidad.
 
@@ -19,9 +19,10 @@ class AppointmentScheduleManager:
         None
         """
         self.schedule = AppointmentSchedule()
+        self.test = test
 
 
-    def book_appointment(self, date: str, shift, appointment, test = False):
+    def book_appointment(self, date: str, shift, appointment):
         """
         Fachada para manejar la función de reserva de citas de la clase AppointmentSchedule.
 
@@ -43,14 +44,14 @@ class AppointmentScheduleManager:
         try:
             can_book = self.schedule.book_appointment(date, shift, appointment)
             if can_book:
-                Logging.info(__name__, "Se reservó una cita para el día %s para el turno %s." % (date, shift), test)
+                Logging.info(__name__, "Se reservó una cita para el día %s para el turno %s." % (date, shift), self.test)
             elif not can_book:
-                Logging.info(__name__, "No se pudo reservar una cita para el día %s para el turno %s." % (date, shift), test)
+                Logging.info(__name__, "No se pudo reservar una cita para el día %s para el turno %s." % (date, shift), self.test)
         except BadDateFormatError:
             can_book = False
-            Logging.critical(__name__, "Fecha %s introducida para la reserva de cita no está en el formato correcto." % (date), test)
+            Logging.critical(__name__, "Fecha %s introducida para la reserva de cita no está en el formato correcto." % (date), self.test)
         except ShiftNotExistError:
             can_book = False
-            Logging.critical(__name__, "Turno %s introducido para la reserva de cita no existe." % (shift), test)            
+            Logging.critical(__name__, "Turno %s introducido para la reserva de cita no existe." % (shift), self.test)            
         
         return can_book

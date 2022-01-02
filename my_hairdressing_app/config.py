@@ -15,7 +15,7 @@ class Config:
     -------
     get_logging_config(self, date: str, shift, appointment)
     """
-    def __init__(self, test = False):
+    def __init__(self, test = True):
         """
         Constructor de la entidad.
 
@@ -33,7 +33,7 @@ class Config:
             filename_file_log = os.getenv('FILENAME_FILE_LOG')
             self.app_config = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
         except Exception:
-            self.app_config = Config.get_dict_config()
+            self.app_config = None
 
         if self.app_config == None:
             try:
@@ -49,7 +49,6 @@ class Config:
                 self.app_config = Config.get_dict_config()
        
 
-        self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
         if test:
             try:
                 self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 

@@ -20,7 +20,7 @@ def test_can_book_appointment(appointments, normal_haircut):
     """
     Test para comprobar que, cuando hay un hueco en el día y turno seleccionado, se puede reservar una cita.
     """
-    assert appointments.book_appointment(DAY, SHIFT, normal_haircut, test = True) == True
+    assert appointments.book_appointment(DAY, SHIFT, normal_haircut) == True
 
 
 def test_can_not_book_appointment(appointments, normal_haircut):
@@ -34,7 +34,7 @@ def test_can_not_book_appointment(appointments, normal_haircut):
         appointments.book_appointment(DAY, SHIFT, normal_haircut)
         count += normal_haircut.getDuration()['first_working_step']
 
-    assert appointments.book_appointment(DAY, SHIFT, normal_haircut, test = True) == False
+    assert appointments.book_appointment(DAY, SHIFT, normal_haircut) == False
 
 
 def test_expected_exception_atribute_date(appointments, normal_haircut):
@@ -42,7 +42,7 @@ def test_expected_exception_atribute_date(appointments, normal_haircut):
     Test para comprobar el levantamiento de excepciones cuando no se introduce correctamente la fecha en la reserva de cita.
     """
     with pytest.raises(BadDateFormatError, match = r".* fecha .*"):
-        appointments.book_appointment('14112021', SHIFT, normal_haircut, test = True)
+        appointments.book_appointment('14112021', SHIFT, normal_haircut)
 
 
 def test_expected_exception_atribute_shift(appointments, normal_haircut):
@@ -50,4 +50,4 @@ def test_expected_exception_atribute_shift(appointments, normal_haircut):
     Test para comprobar el levantamiento de excepciones cuando no se introduce correctamente el turno de trabajo en la reserva de cita.
     """
     with pytest.raises(ShiftNotExistError, match = r".* turno .*"):
-        appointments.book_appointment(DAY, 'm', normal_haircut, test = True)
+        appointments.book_appointment(DAY, 'm', normal_haircut)

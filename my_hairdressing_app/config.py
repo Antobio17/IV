@@ -25,13 +25,18 @@ class Config:
         """
         load_dotenv()
         
+        dateformat_log = None
+        format_log = None
+        level_console_log = None
+        level_file_log = None
+        filename_file_log = None
+
         try:
             dateformat_log = os.getenv('DATEFORMAT_LOG')
             format_log = os.getenv('FORMAT_LOG')
             level_console_log = os.getenv('LEVEL_CONSOLE_LOG')
             level_file_log = os.getenv('LEVEL_FILE_LOG')
-            filename_file_log = os.getenv('FILENAME_FILE_LOG')
-            self.app_config = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
+            filename_file_log = os.getenv('FILENAME_FILE_LOG')  
         except Exception:
             self.app_config = None
 
@@ -46,8 +51,12 @@ class Config:
                 filename_file_log = etcd.get('/config/logging/FILENAME_FILE_LOG')
                 self.app_config['logging'] = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
             except Exception:
-                self.app_config = Config.get_dict_config()
+                self.app_config = None
        
+        if dateformat_log != None and format_log != None and level_console_log != None and level_file_log != None and filename_file_log != None:
+            self.app_config = Config.get_dict_config(dateformat_log, format_log, level_console_log, level_file_log, filename_file_log)
+        else:
+            self.app_config = Config.get_dict_config()
 
         if test:
             try:

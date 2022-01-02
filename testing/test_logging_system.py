@@ -25,8 +25,8 @@ def test_logger(logging_config, schedule_manager, normal_haircut):
     Test para comprobar que se registra un log a los distintos niveles especificados.
     """
 
-    schedule_manager.book_appointment('13122021', SHIFT, normal_haircut)
-    schedule_manager.book_appointment(DAY, SHIFT, normal_haircut)
+    schedule_manager.book_appointment('13122021', SHIFT, normal_haircut, test = True)
+    schedule_manager.book_appointment(DAY, SHIFT, normal_haircut, test = True)
 
     file_name = logging_config['handlers']['file']['filename']
     with open(file_name) as file:

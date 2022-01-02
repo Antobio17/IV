@@ -49,6 +49,7 @@ class Config:
                 self.app_config = Config.get_dict_config()
        
 
+        self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 
         if test:
             try:
                 self.app_config['logging']['handlers']['file']['filename'] = '/tmp/app.log' 

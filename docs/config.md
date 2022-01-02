@@ -7,6 +7,8 @@ Los requisitos para almacenar nuestra configuración son:
 ## Configuración local: .env
 Para almacenar la configuración se ha optado por usar un fichero **Dotenv** . Se usarán pares claves valor para la definicion de las variables de entorno. Al usar este tipo de variables podremos añadirlas a los _Sistemas de CI_ para su uso en la ejecución de tests como en **CircleCI** por ejemplo:
 
+![Valores de entorno](/docs/images/vars_env.png "Valores de entorno")
+
 ## Configuración remota
 
 Para el almacenamiento de la configuración remota se va a usar **ETCD3** por su simplicidad. Usando la _API_ para _Python_ únicamente deberémos hacer solicitudes **GET** con el cliente al que accederemos a través del host y el puerto una vez configurado.

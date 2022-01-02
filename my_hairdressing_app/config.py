@@ -1,5 +1,4 @@
 import os
-import etcd3
 from dotenv import load_dotenv
 
 class Config:
